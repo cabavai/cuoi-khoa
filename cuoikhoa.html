@@ -1,0 +1,330 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish blog</title>
+    <link rel="stylesheet" type="text/css" href="cuoikhoa.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-16x16.png">
+
+<style>
+    * {box-sizing: border-box;}
+        
+        body { 
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #navbar {
+          overflow: hidden;
+          background-color: #f1f1f1;
+          padding: 90px 10px;
+          transition: 0.4s;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 99;
+          height: 80px;
+        }
+        
+        #navbar a {
+          float: left;
+          color: black;
+          text-align: center;
+          padding: 10px;
+          text-decoration: none;
+          font-size: 17px; 
+          line-height: 20px;
+          border-radius: 4px;
+        }
+        
+        #navbar #logo {
+          font-size: 35px;
+          font-weight: bold;
+          transition: 0.4s;
+        }
+        
+        #navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        #navbar a.active {
+          background-color: dodgerblue;
+          color: white;
+        }
+        
+        #navbar-right {
+          float: right;
+        }
+        
+        @media screen and (max-width: 580px) {
+          #navbar {
+            padding: 20px 5px !important;
+          }
+          #navbar a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+          #navbar-right {
+            float: none;
+          }
+        }
+</style>
+</head>
+<body>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.padding = "30px 10px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.padding = "60px 10px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        }
+    </script>
+    <div id="trang1" class="trang1"></div>
+    <div class="navbar" id="navbar">
+        <a href="#navbar" id="logo">-FISH Blog-</a>
+        <div id="navbar-right">
+            <a class="active" href="#trang1">
+                <img id="h" src="https://image.flaticon.com/icons/png/512/2/2144.png">
+                Home
+            </a>
+            <a href="#trang2">
+                <img id="b" src="http://simpleicon.com/wp-content/uploads/blog.png">
+                Blog  
+            </a>
+            <a href="#trang3">
+                <img id="e" src="https://static.thenounproject.com/png/221040-200.png">
+                Entertainment 
+            </a>
+            <a href="file:///D:/JSB/ti.html">
+                <img id="u" src="https://static.thenounproject.com/png/2035509-200.png">
+                Utilities
+            </a>
+            <a href="file:///D:/JSB/about.html">
+                <img id="a" src="https://cdn2.iconfinder.com/data/icons/web-solid/32/user-512.png">
+                About me            
+            </a>
+        </div>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="LOGIN" class="LOGIN">
+        <div class="r">
+            <h5 >LOGIN</h5>       
+        </div>        
+        <input tybe ="text" id="n" placeholder="Name">
+        <input tybe ="text" id="dn" placeholder="Email address">       
+        <input tybe ="password" id="mk" placeholder="Passwordd">
+        <br>
+        <br>       
+        <button class="g" onclick="b()">Login</button>
+    </div>
+
+    <br><br><br><br><br><br>
+   
+    <div id="trang2" class="trang2"><br>
+      <p id="btd">Blog</p>
+    </div>
+
+    <div id="blog" class="blog">
+
+      <div class="doisong">
+        <a href="https://blogradio.vn/blog-cuoc-song-cn2910.html">
+          <div class="dsTD"><br>
+            <h1>Đời Sống</h1>
+          </div>
+          <img id="anhttds" src="data:image/jpeg;base64,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">
+
+        </a> 
+      </div>     
+      <div class="suckhoe">
+        <a href="https://www.blogsuckhoe.com/">
+          <div class="skTD"><br>
+            <h1>Sức Khỏe</h1>
+          </div>
+          <img id="anhsuckhoe" src="http://file.medinet.gov.vn/UploadImages/soytehcm/2018_11/05/image007_51120186.png">
+        </a>
+      </div>
+      <div class="tintuc">
+        <a href="https://baomoi.com/">
+          <div class="ttTD"><br>
+            <h1>Tin tức </h1>
+          </div>
+          <img id="anhttds" src="https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-cartoon-open-newspaper-illustration-image_1407240.jpg">
+        </a>
+      </div> 
+    </div><br><br><br><br>
+
+    <div id="trang3"><br><br><br><br>
+      <p id="etd">Entertainment</p>
+    </div>
+
+
+    <div id="entertainment" class="entertainment">
+      <div class="tintuce">       
+        <a class="antt" href="https://vnexpress.net/giai-tri">     
+
+          <div class="tintuceTD"><br>
+              <h2>Tin tức</h2>
+          </div>
+          <img  id="anhttds" src="https://inc42.com/wp-content/uploads/2021/01/MediaEnt-Feature.jpg">
+        </a>
+      </div>
+
+
+      <div class="game">
+
+
+        <div class="gameTD"><br>
+          <h2>Game</h2><br>
+        </div><br>
+
+        <div class="litegame">
+
+          <h7>___Lite game_________________________________</h7><br><br>
+          <a href="https://krunker.io/">
+            <img id="gameicon" src="https://play-lh.googleusercontent.com/Asdlq3Wtlca1vd2Qkbk4ar2-2mN7sVYmOqN_0bkVRHIsvDk6yU7V8p9suVX3vypYxQ">
+          </a>
+          <a  href="https://www.evowars.io/?v=1.7.47">
+            <img id="gameicon" src="https://cdn6.aptoide.com/imgs/a/4/3/a43f7f3f6c1df3fdc83dcea8b5c86b42_icon.png">
+          </a>
+          <a href="https://crowdedcity.io/">
+            <img id="gameicon" src="https://crowdcity.io/assets/images/crowdcity-logo.png">
+          </a>
+          <a href="http://slither.io/">
+            <img id="gameicon" src="http://static.game24h.vn/upload/2018/2018-1/game/2018-03-12/ran-an-so.png">
+          </a>
+          <a href="https://zombsroyale.io/">
+            <img id="gameicon" src="http://lh3.googleusercontent.com/e41swUPz-zvGTMmcsSahJDNx995iR2uWvX5kluYKDn7tWxD5kPrSniQUYJjdRtuIBMQ=w300">
+          </a>
+          <a href="https://ev.io/">
+            <img id="gameicon" src="https://pokigamesonline.com/wp-content/uploads/thumbs/gamedistribution/E/evio.jpeg">
+          </a>
+          <a href="https://shellshock.io/">
+            <img id="gameicon" src="https://wallpaperaccess.com/full/5392745.jpg">
+          </a>
+          <a href="https://diep.io/">
+            <img id="gameicon" src="https://is4-ssl.mzstatic.com/image/thumb/Purple30/v4/65/38/18/653818d8-c03a-b8ff-d14f-adec229bb03d/source/512x512bb.jpg">
+          </a>
+          <a href="https://brutal.io/">
+            <img  id="gameicon2" src="https://iogames.space/sites/default/files/banner_iogames.png">
+          </a>
+
+        </div>
+
+        <div class="webgame"><br>
+          <h7>___Web game________________________________</h7><br><br>
+          <a href="https://vi.y8.com/">
+            <img id="webgameicon" src="https://storage.y8.com/y8-studio/html5/akeemywka/tanque_3d_sports_v8/04_Y8_logo_l_WhiteStroke.png">
+          </a>
+          <a href="https://gamevui.vn/">
+            <img id="webgameicon" src="http://e.gamevui.vn/web/thiet-ke-vay-cong-chua/logo.png">
+          </a>
+          <a href="https://game24h.vn/">
+            <img  id="webgameicon"src="https://static.game24h.vn/upload/footer/2009-12-15/20091215145223_logo-footer.gif ">
+          </a>
+        </div>
+
+        <div class="gamehot"><br><br>
+          <h7>___Game hot_________________________________</h7>
+        </div> 
+
+
+      </div>
+
+
+      <div class="amnhac">
+        <a  class="antt" href="https://www.nhaccuatui.com/">
+          <div class="amnhacTD"><br>
+            <h2>Âm nhạc</h2><br>
+          </div>
+          <img id="anhttds" src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/YT_Music.jpg">
+        </a>
+
+
+
+      </div>
+
+    </div>
+    <br><br><br>
+    <div class="utilities">
+      <a href="file:///D:/JSB/ti.html">
+        <div class="uTD"><br>
+          <h8>Utilities</h8>
+        </div>
+      </a>
+      <a href="file:///D:/JSB/about.html">
+        <div class="aTD"><br>
+          <h8>About me</h8>
+        </div>
+      </a>
+    </div>
+    
+    
+    <br><br><br><br>
+
+      
+      <div class="trang4">
+        <h10>About</h10>
+        <h10>Links</h10>
+        <h10>Contact</h10>
+        <h10>Have a questions!?</h10>
+    </div>
+      <div class="trang5">
+        <div>
+        <h11>
+          Description<br><br>
+          Profile!<br>
+
+          <div class="fain">
+            <img id="mg" src="https://image.flaticon.com/icons/png/512/59/59439.png">
+          </div>
+          <div class="fain">
+            <img id="img" src="https://cdn.icon-icons.com/icons2/2248/PNG/512/instagram_icon_138461.png">
+          </div>
+          </h11>
+        </div>
+        </h11>
+        <h9>
+           →Home<br>
+          →Blog<br>
+          →Entertainment<br>
+           →Utilities<br>
+           →About mee<br>
+           </h9>
+          
+        <h9>
+          Email: vudung@gmail.com<br><br><br><br>
+          Phone: +8443322442
+        </h9>
+        <h11>
+          Address: HANOI,.....<br><br>
+          Job: DOnt Have<br><br>
+          Hobby:Play sptt<br><br>
+        </h11>
+      </div>
+      <div class="trang6">
+        <h15>©  Designed by FISH BLOG !!</h15>
+      </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
